@@ -20,7 +20,6 @@ import javax.annotation.Nullable;
 
 import io.intercom.android.sdk.Intercom;
 import io.intercom.android.sdk.identity.Registration;
-import io.intercom.android.sdk.preview.IntercomPreviewPosition;
 
 public class IntercomModule extends ReactContextBaseJavaModule {
 
@@ -113,17 +112,6 @@ public class IntercomModule extends ReactContextBaseJavaModule {
     public void displayConversationList(Callback callback) {
         Intercom.client().displayConversationsList();
         callback.invoke(null, null);
-    }
-
-    @ReactMethod
-    public void setVisibility(Integer visibility, Callback callback) {
-        Intercom.client().setVisibility(visibility);
-        callback.invoke(null, null);
-    }
-
-    @ReactMethod
-    public void setPreviewPosition() {
-        // @TODO
     }
 
     private Map<String, Object> recursivelyDeconstructReadableMap(ReadableMap readableMap) {
